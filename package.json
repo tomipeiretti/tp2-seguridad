@@ -1,0 +1,20 @@
+{
+  "name": "seguridad-tp2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gonzag1/seguridad-tp2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gonzag1/seguridad-tp2/issues"
+  },
+  "homepage": "https://github.com/gonzag1/seguridad-tp2#readme",
+  "description": ""
+}
