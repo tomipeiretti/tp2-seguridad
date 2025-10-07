@@ -29,7 +29,12 @@ jobs:
          API_KEY: ${{ secrets.API_KEY }}
 
       - name: Ejecutar aplicación con Secret
-        run: node src/index.js
+        run: |
+          node src/index.js &
+          PID=$!
+          sleep 5
+          echo "Finalizando servidor..."
+          kill $PID
         env:
           API_KEY: ${{ secrets.API_KEY }}
 
