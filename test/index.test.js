@@ -1,13 +1,16 @@
-// test/index.test.js
-const getWeather = require('../src/index');
+const getWeather = require("../src/index");
 
-// Test 1: que la función esté definida
-test('La función getWeather debe estar definida', () => {
-  expect(typeof getWeather).toBe('function');
+test("La función getWeather debe estar definida", () => {
+  expect(typeof getWeather).toBe("function");
 });
 
 test("La función getWeather devuelve un string", async () => {
+  // Para evitar errores de red en Jest, podemos mockear la API o testear estructura general
   const result = await getWeather("Mendoza");
   expect(typeof result).toBe("string");
 });
 
+test('Debe lanzar error si falta la variable de entorno API_KEY', async () => {
+  delete process.env.API_KEY; // eliminamos temporalmente la variable
+  await expect(getWeather('Mendoza')).rejects.toThrow('No se encontró la variable de entorno API_KEY');
+});
