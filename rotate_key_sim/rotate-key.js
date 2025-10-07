@@ -13,3 +13,5 @@ function rotateKey() {
 }
 
 rotateKey();
+
+//se deberia integrar con sistemas como HashiCorp Vault, AWS KMS o Azure Key Vault
