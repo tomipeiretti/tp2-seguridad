@@ -1,20 +1,27 @@
 {
-  "name": "seguridad-tp2",
+  "name": "tp2-seguridad",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gonzag1/seguridad-tp2.git"
+    "url": "git+https://github.com/tomipeiretti/tp2-seguridad.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gonzag1/seguridad-tp2/issues"
+    "url": "https://github.com/tomipeiretti/tp2-seguridad/issues"
   },
-  "homepage": "https://github.com/gonzag1/seguridad-tp2#readme",
-  "description": ""
+  "homepage": "https://github.com/tomipeiretti/tp2-seguridad#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
