@@ -1,5 +1,4 @@
 import express from "express";
-import fetch from "node-fetch"; // si estás usando node 18+, fetch ya está global
 
 const app = express();
 const PORT = process.env.PORT || 3000;
