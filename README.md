@@ -17,8 +17,8 @@ Esto asegura que las claves estén cifradas, no visibles en los logs, y disponib
 Los Secrets se inyectan temporalmente en los pasos que los requieren:
 ```yaml
 env:
-  API_KEY: ${{ secrets.API_KEY }}
-
+  API_KEY: ${{ secrets.API_KEY }} 
+```
 De esta manera, la aplicación puede acceder a los valores sensibles sin exponerlos en el código ni en el repositorio.
 
 #### c) Configuración de Secrets en Render
