@@ -78,18 +78,19 @@ Si bien en este proyecto se utilizó la funcionalidad de GitHub Secrets y Render
 En un entorno real, el script de rotación podría conectarse con alguno de estos sistemas para revocar y reemplazar claves reales automáticamente, garantizando una política de seguridad dinámica y auditable.
 
 ## 4. Resumen del Flujo Seguro CI/CD
-  [Desarrollador]
+```
+[Desarrollador]
      ↓ (commit/push)
-  GitHub Actions:
+GitHub Actions:
   → Construcción y pruebas automatizadas
   → Ejecución temporal de la app con Secrets
   → Despliegue automático en Render
   → Rotación simulada de claves
      ↓
-  Render:
+Render:
   → Aplicación desplegada
   → API_KEY segura almacenada en entorno
-
+```
 
 
 
