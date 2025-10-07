@@ -31,7 +31,7 @@ Se implementó un script (rotate_key_sim/rotate-key.js) que simula la rotación 
 Esto demuestra la posibilidad de integrar políticas de renovación periódica de claves como parte de un proceso CI/CD seguro.
 
 ## 2. Prácticas de Seguridad Implementadas
-###🔹 Gestión Segura de Credenciales
+### 🔹 Gestión Segura de Credenciales
 
  Ninguna clave se almacena en el código fuente.
 
@@ -41,7 +41,7 @@ Esto demuestra la posibilidad de integrar políticas de renovación periódica d
 
  Separación de entornos (GitHub Actions → CI / Render → CD).
 
-###🔹 Control de Código y Dependencias
+### 🔹 Control de Código y Dependencias
 
 Archivo .gitignore configurado para excluir:
 
@@ -53,7 +53,7 @@ Dependencias instaladas mediante npm install, verificadas con package-lock.json.
 
 Uso de Node.js (v18) para garantizar compatibilidad y soporte de seguridad.
 
-###🔹 Buenas Prácticas en CI/CD
+### 🔹 Buenas Prácticas en CI/CD
 
 Pipeline CI/CD automatizado que incluye:
 
