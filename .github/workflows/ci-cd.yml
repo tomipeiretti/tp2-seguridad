@@ -50,3 +50,5 @@ jobs:
             -d '{}' \
             "https://api.render.com/v1/services/$RENDER_SERVICE_ID/deploys"
 
+      - name: Rotación automática de claves (simulada)
+        run: node rotate_key_sim/rotate-key.js
