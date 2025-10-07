@@ -45,9 +45,9 @@ Esto demuestra la posibilidad de integrar políticas de renovación periódica d
 
 Archivo .gitignore configurado para excluir:
 
-    node_modules/
+- node_modules/
 
-    Archivos temporales o con claves generadas.
+- Archivos temporales o con claves generadas.
 
 Dependencias instaladas mediante npm install, verificadas con package-lock.json.
 
@@ -57,15 +57,15 @@ Uso de Node.js (v18) para garantizar compatibilidad y soporte de seguridad.
 
 Pipeline CI/CD automatizado que incluye:
 
-    Build
+- Build
 
-    Test unitarios (Jest)
+- Test unitarios (Jest)
 
-    Ejecución temporal con Secrets
+- Ejecución temporal con Secrets
 
-    Despliegue automático a Render
+- Despliegue automático a Render
 
-    Rotación simulada de claves
+- Rotación simulada de claves
 
 Detención controlada del servidor Express durante el pipeline.
 
