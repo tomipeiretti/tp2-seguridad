@@ -5,7 +5,6 @@ test("La función getWeather debe estar definida", () => {
 });
 
 test("La función getWeather devuelve un string", async () => {
-  // Para evitar errores de red en Jest, podemos mockear la API o testear estructura general
   const result = await getWeather("Mendoza");
   expect(typeof result).toBe("string");
 });

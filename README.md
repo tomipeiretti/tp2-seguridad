@@ -77,7 +77,22 @@ Si bien en este proyecto se utilizó la funcionalidad de GitHub Secrets y Render
 
 En un entorno real, el script de rotación podría conectarse con alguno de estos sistemas para revocar y reemplazar claves reales automáticamente, garantizando una política de seguridad dinámica y auditable.
 
-## 4. Resumen del Flujo Seguro CI/CD
+## 4. Implementación del Despliegue Seguro en Render
+
+La aplicación fue desplegada en **Render** como un *Web Service* conectado al repositorio de GitHub.  
+Se configuró la variable de entorno `API_KEY` en **Environment Variables**, garantizando la protección de credenciales.  
+
+Durante el despliegue, Render ejecuta los comandos:
+- **Build:** `npm install`  
+- **Start:** `npm start`  
+
+El servicio permanece activo en estado **Live**, escuchando en el puerto asignado (`process.env.PORT`), y puede reactivarse automáticamente tras períodos de inactividad.  
+
+ La aplicacion se encuentra accesible en la URL: 
+  **https://tp2-seguridad.onrender.com**
+
+
+## 5. Resumen del Flujo Seguro CI/CD
 ```
 [Desarrollador]
      ↓ (commit/push)
