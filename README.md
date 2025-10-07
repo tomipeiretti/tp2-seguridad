@@ -71,13 +71,13 @@ Detención controlada del servidor Express durante el pipeline.
 
 Uso de variables de entorno temporales y logs controlados sin exposición de datos sensibles.
 
-##🧩 3. Herramientas Profesionales de Gestión de Claves Privadas
+## 3. Herramientas Profesionales de Gestión de Claves Privadas
 
 Si bien en este proyecto se utilizó la funcionalidad de GitHub Secrets y Render Environment Variables, en una implementación profesional de rotación de claves podrían integrarse herramientas específicas para la gestión centralizada y automatizada de secretos, tales como HashiCorp Vault, AWS Key Management Service (KMS), Azure Key Vault, GitGuardian y Doppler.
 
 En un entorno real, el script de rotación podría conectarse con alguno de estos sistemas para revocar y reemplazar claves reales automáticamente, garantizando una política de seguridad dinámica y auditable.
 
-##🧩 4. Resumen del Flujo Seguro CI/CD
+## 4. Resumen del Flujo Seguro CI/CD
 [Desarrollador]
      ↓ (commit/push)
 GitHub Actions:
