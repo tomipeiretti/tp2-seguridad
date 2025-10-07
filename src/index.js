@@ -1,38 +1,32 @@
-// src/app.js
-// Aplicación Node.js que consulta la API de OpenWeatherMap usando fetch
-// La API key se inyecta desde GitHub Secrets mediante variables de entorno
+import express from "express";
+import fetch from "node-fetch"; // si estás usando node 18+, fetch ya está global
 
-async function getWeather(city) {
-  const apiKey = process.env.API_KEY; // viene desde el secret de GitHub
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-  if (!apiKey) {
-    throw new Error('No se encontró la variable de entorno API_KEY');
-  }
+async function getWeather(city = "Mendoza") {
+  const apiKey = process.env.API_KEY;
+  if (!apiKey) throw new Error("No se encontró la variable de entorno API_KEY");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
+  const res = await fetch(url);
+  const data = await res.json();
 
+  const clima = `Clima en ${city}: ${data.main.temp}°C, ${data.weather[0].description}`;
+  console.log(clima);
+  return clima;
+}
+
+// endpoint web
+app.get("/", async (req, res) => {
   try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`Error en la API: ${response.status} ${response.statusText}`);
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error al obtener el clima:', error.message);
-    throw error;
+    const clima = await getWeather("Mendoza");
+    res.send(`<h2>${clima}</h2>`);
+  } catch (err) {
+    res.status(500).send("Error obteniendo el clima");
   }
-}
+});
 
-// Si se ejecuta directamente (no importado por otro módulo)
-if (require.main === module) {
-  getWeather('Mendoza')
-    .then(data => {
-      console.log(`Clima en ${data.name}: ${data.main.temp}°C, ${data.weather[0].description}`);
-    })
-    .catch(console.error);
-}
-
-module.exports = getWeather;
+app.listen(PORT, () => {
+  console.log(`🌐 Servidor corriendo en puerto ${PORT}`);
+});
